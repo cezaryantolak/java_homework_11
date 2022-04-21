@@ -52,7 +52,8 @@ public class FormPage {
     @FindBy(css = ".btn-primary")
     private WebElement submitFormBtn;
 
-    public FormPage uploadFile(File file) {
+    public FormPage uploadFile(String path) {
+        File file = new File(path);
         fileInput.sendKeys(file.getAbsolutePath());
         return this;
     }
@@ -71,8 +72,8 @@ public class FormPage {
         return this;
     }
 
-    public FormPage setAge(int age) {
-        this.age.sendKeys(String.valueOf(age));
+    public FormPage setAge(String age) {
+        this.age.sendKeys(age);
         return this;
     }
 
